@@ -52,6 +52,7 @@ module OData
           block_given? ? block.call(entity) : yield(entity)
         end
 
+        break if entities.length < per_page
         page += 1
       end
     end
